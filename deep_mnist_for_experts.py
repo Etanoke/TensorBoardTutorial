@@ -100,7 +100,7 @@ def train():
     # Start Training!
     run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
     run_metadata = tf.RunMetadata()
-    train_log_interval = max(FLAGS.max_steps // 2000, 1)
+    train_log_interval = max(FLAGS.max_steps // 20, 1)
     test_log_interval = max(FLAGS.max_steps // 200, 1)
     for i in range(FLAGS.max_steps):
         batch = mnist.train.next_batch(50)
