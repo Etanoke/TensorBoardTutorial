@@ -1,13 +1,14 @@
-import tensorflow as tf
-from tensorflow.contrib import learn
 import numpy as np
+import tensorflow as tf
 from sklearn import cross_validation
+from tensorflow.contrib import learn
 
 flags = tf.app.flags
 FLAGS = flags.FLAGS
 flags.DEFINE_integer('max_steps', 1000, 'Number of steps to run trainer.')
 flags.DEFINE_float('learning_rate', 0.01, 'Initial learning rate.')
 flags.DEFINE_string('summaries_dir', '/tmp/tensor_logs', 'Summaries directory')
+
 
 def train(train_x, test_x, train_y, test_y):
     sess = tf.InteractiveSession()
@@ -88,6 +89,7 @@ def main():
         sample_inputs, sample_labels, test_size=0.2
     )
     train(train_x, test_x, train_y, test_y)
+
 
 if __name__ == '__main__':
     main()

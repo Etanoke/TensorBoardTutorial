@@ -1,7 +1,7 @@
-import tensorflow as tf
-from tensorflow.contrib import learn
 import numpy as np
+import tensorflow as tf
 from sklearn import cross_validation
+from tensorflow.contrib import learn
 
 
 def train(train_x, test_x, train_y, test_y):
@@ -49,6 +49,7 @@ def main():
         sample_inputs, sample_labels, test_size=0.2
     )
     train(train_x, test_x, train_y, test_y)
+
 
 if __name__ == '__main__':
     main()
